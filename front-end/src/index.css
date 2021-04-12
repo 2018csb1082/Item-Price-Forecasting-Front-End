@@ -322,3 +322,41 @@ button + button {
   align-items: center;
   justify-content: center;
 }
+
+.outer-form-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.inner-form-box {
+  width: 40%;
+  margin-top: 100px;
+  background: #d4dcfa; 
+  flex: 1; 
+  padding: 40px; 
+  border-radius: 20px;
+  border: 2px solid black;
+}
+
+.upper-main-predict{
+  color: #222222; 
+  font-family: 'Raleway',sans-serif; 
+  font-size: 30px; 
+  font-weight: 500; 
+  line-height: 36px; 
+  margin: 24px 0 24px; 
+  text-align: center;
+}
+
+.lower-main-predict {
+  color: #222222; 
+  font-family: 'Raleway',sans-serif; 
+  font-size: 30px; 
+  font-weight: 500; 
+  line-height: 36px; 
+  margin: 24px 0 24px; 
+  text-align: center;
+}

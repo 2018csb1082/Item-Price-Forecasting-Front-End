@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { Layout } from 'antd';
-import GovLogo from '../../common/images/GovLogo.png'
 
 import FlexBox from '../FlexBox/index';
 

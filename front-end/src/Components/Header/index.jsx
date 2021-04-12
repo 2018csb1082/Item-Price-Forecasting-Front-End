@@ -1,5 +1,4 @@
 import React from 'react';
-import govlogo from '../../common/images/GovLogo.png';
 import { AppHeader, Wrapper, HeaderLinks, LogoContainer, Logo } from './styles';
 
 const Header = () => {
@@ -7,7 +6,7 @@ const Header = () => {
         <AppHeader>
             <Wrapper>
                 <LogoContainer>
-                    <img src={govlogo} alt="government logo" style={{ width: "60px", height: "50px",marginLeft: "10px"}}/>
+                    {/*<img src={govlogo} alt="government logo" style={{ width: "60px", height: "50px",marginLeft: "10px"}}/>*/}a
                 </LogoContainer>
                 <HeaderLinks>
                     <div className="nick-name">
