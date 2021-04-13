@@ -51,7 +51,6 @@ const BarChart = ({ timeLine, dataSet, legend, height, width, downloadAsImage })
 
     const final = (
         <>
-            <Button onClick={download}>Download Chart</Button>
             {chart}
         </>
     )

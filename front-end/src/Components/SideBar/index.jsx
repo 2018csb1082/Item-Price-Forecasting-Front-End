@@ -14,44 +14,15 @@ import {
     LogoutIcon,
 } from './styles';
 
-/**
- * the items values needs to be obtained from user settings/config
- * fetched from waxwing backend
- */
 
-const resources = [
-    {
-        name: 'General Administration',
-        link: '/general-administration',
-    },
-    {
-        name: 'Development Administration',
-        link: '/dev-administration',
-    },
-    {
-        name: 'Seasonal Work',
-        link: '/seasonal',
-    },
-    {
-        name: 'Structured Drives and Working',
-        link: '/drives-working',
-    },
-];
 const modules = [
     {
-        name: 'Create Data Entry',
-        link: '/app/quick-start',
-        items: 0,
+        name: 'My Wishlist',
+        link: '/',
     },
     {
-        name: 'Upload Excel file',
-        link: '/upload-sheet',
-        items: 0,
-    },
-    {
-        name: 'Delete/Update Data',
-        link: '/app/quick-start',
-        items: 0,
+        name: 'Add an Item to Wishlist',
+        link: '/add-product',
     },
 ];
 
@@ -83,21 +54,6 @@ const SideBar = () => {
                         );
                     })}
                 </LinkContainer>
-                <LinkContainer>
-                    <Title>RESOURCES</Title>
-                    {resources.map(({ name, link }) => {
-                        return (
-                            <StyledLink to={link} key={link}>
-                                <NavLink
-                                    height="30px"
-                                >
-                                    {name}
-                                </NavLink>
-                            </StyledLink>
-                        );
-                    })}
-                </LinkContainer>
-
                 <LinkPayment style={{ textAlign: 'center' }}>
                     <FlexBox style={{ marginTop: 10 }}>
                     </FlexBox>

@@ -1,6 +1,5 @@
 import React from "react";
 import Barchart from "../BarChart/BarChart";
-import Doughnutchart from "../DoughnoutChart/DoughnotChart";
 import LineChart from "../LineChart/LineChart";
 import { Tabs } from "antd";
 const { TabPane } = Tabs;
@@ -28,16 +27,6 @@ const AllChart = ({ datasets, legend, timeline }) => {
         </TabPane>
         <TabPane key="2" tab="Linechart">
           <LineChart
-            dataSet={datasets}
-            legend={legend}
-            timeLine={timeline}
-            width="400"
-            height="400"
-            downloadAsImage={downloadAsImage}
-          />
-        </TabPane>
-        <TabPane key="3" tab="Piechart">
-          <Doughnutchart
             dataSet={datasets}
             legend={legend}
             timeLine={timeline}

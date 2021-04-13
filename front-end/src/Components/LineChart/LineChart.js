@@ -13,9 +13,11 @@ const LineChart = ({ timeLine, legend, dataSet, height, width, downloadAsImage }
                     {
                         label: legend,
                         data: dataSet,
-                        borderWidth: 1,
+                        borderWidth: 2,
                         backgroundColor: 'rgba(255, 99, 132, 0.5)',
                         lineTension: 0,
+                        fill: false,
+                        borderColor: 'rgba(255, 99, 132, 0.5)',
                     }
                 ]
             }
@@ -44,7 +46,6 @@ const LineChart = ({ timeLine, legend, dataSet, height, width, downloadAsImage }
 
     const final = (
         <>
-            <Button onClick={download}>Download Chart</Button>
             { chart}
         </>
     );
