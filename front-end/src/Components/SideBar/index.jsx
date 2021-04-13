@@ -18,12 +18,16 @@ import {
 const modules = [
     {
         name: 'My Wishlist',
-        link: '/',
+        link: '/whislist',
     },
     {
         name: 'Add an Item to Wishlist',
         link: '/add-product',
     },
+    {
+        name: 'Predict',
+        link: '/predict'
+    }
 ];
 
 const SideBar = () => {
