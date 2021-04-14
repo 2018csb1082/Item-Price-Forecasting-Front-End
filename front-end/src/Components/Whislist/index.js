@@ -2,6 +2,8 @@ import React from "react";
 import PageLayout from "../PageLayout/PageLayout";
 import Item from "../Item/Item";
 
+
+
 export default function Whislist(props) {
   return (
     <PageLayout {...props}>
