@@ -9,7 +9,7 @@ export default function Item(props) {
     <Card
       hoverable
       style={{
-        width: 300,
+        width: "100%",
         margin: "auto",
         marginTop: 20,
         borderRadius: 10,
@@ -22,8 +22,7 @@ export default function Item(props) {
           style={{
             borderTopLeftRadius: 10,
             borderTopRightRadius: 10,
-            maxHeight: 150,
-            maxHeight: 150,
+            maxHeight: 180,
           }}
         />
       }
