@@ -159,7 +159,7 @@ a {
   padding: 12px 20px;
   border-style: 1;
   border-radius: 5px;
-  background-color: #252540;
+  background-color: #05386B;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
   font-size: 17px;
   font-weight: 500;
@@ -334,7 +334,7 @@ button + button {
 .inner-form-box {
   width: 60%;
   margin-top: 100px;
-  background: #d4dcfa; 
+  background: #8EE4AF; 
   flex: 1; 
   padding: 40px; 
   border-radius: 20px;
@@ -406,4 +406,85 @@ button + button {
 }
 .ant-tabs-tab:hover {
   color: #05386B !important;
+}
+
+.add-product {
+  width: 100%;
+  padding: 30px 60px;
+}
+
+.add-product-grid-1 {
+  width: 900px;
+  display: grid;
+  grid-template-columns: 20fr 4fr;
+  margin: 20px 0px 15px 0px;
+}
+
+.add-product-input {
+  background-color: #EDF5E1;
+  padding: .45rem;
+  font-size: 15px;
+  width: 100%;
+  display: block;
+  border-radius: 8px 0px 0px 8px;
+  border: 1px solid #EDF5E1;
+}
+
+.add-product-input:focus {
+  border-color: #05386B ;
+  box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.075),
+    0 0 0 3px rgba(0, 126, 255, 0.1);
+  outline: none;
+}
+
+.button-add-product {
+  color: #EDF5E1 !important; 
+  padding: .45rem !important;
+  font-size: 15px !important;
+  font-weight: 700;
+  background-color: #05386B !important;
+  border-radius: 0px 10px 10px 0px !important;
+}
+
+.button-goto-wishlist {
+  color: #EDF5E1 !important; 
+  padding: .2rem .45rem !important;
+  font-size: 15px !important;
+  font-weight: 700;
+  background-color: #05386B !important;
+  border-radius: 10px 10px 10px 10px !important;
+}
+
+.add-product-header {
+  width: 900px;
+  font-size: 30px;
+  font-weight: 700;
+  color: #EDF5E1;
+}
+
+.add-product-subheader {
+  width: 900px;
+  font-size: 25px;
+  font-weight: 700;
+  color: #05386B;
+}
+
+.add-product-main {
+  width: 900px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #05386B;
+}
+
+.website-icon {
+  height: 80px;
+  width: 80px;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 3px 10px 0 rgba(0,0,0,0.19);
+  margin: 10px;
+}
+
+.website-icon:hover {
+  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.24), 0 8px 20px 0 rgba(0,0,0,0.19);
 }
