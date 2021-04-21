@@ -1,14 +1,16 @@
 import { CssBaseline, Grid, makeStyles, Paper } from "@material-ui/core";
 import React from "react";
 import Helper from "./Helper";
+import bg1 from '../../common/images/1.png';
+import bg2 from '../../common/images/2.jpg';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     height: "100vh",
   },
   image: {
-    backgroundImage:
-      "url(https://ak.picdn.net/shutterstock/videos/17865847/thumb/5.jpg)",
+    backgroundImage:`url(${bg2})`,
+    backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center",
     height: "100vh"
