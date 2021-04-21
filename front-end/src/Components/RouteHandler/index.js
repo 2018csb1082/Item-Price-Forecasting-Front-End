@@ -4,12 +4,9 @@ import { Switch, Route } from 'react-router-dom'
 import PrePage from '../PredictionPage/index';
 import AddProduct from '../AddProduct/index';
 import Whislist from '../Whislist/index';
-<<<<<<< HEAD
 import Login from "../LogIn/Login";
 import Signup from "../SignUp/SignUp"
-=======
 import MainPage from '../MainPage/index';
->>>>>>> cee07e693bf11b6845651a13162c15f965beae3b
 
 const index = () => {
     return (
