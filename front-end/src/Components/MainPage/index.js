@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Tabs, Button, Divider, Checkbox } from 'antd';
 import logo from '../../common/images/logo_cropped.png';
 import logout from '../../common/images/logout.svg';
 import {LogoutOutlined} from '@ant-design/icons';
 import AddProduct from '../AddProduct/AddProduct';
+import Wishlist from '../Whislist/wishlist';
 
 const { TabPane } = Tabs;
 
@@ -13,12 +14,22 @@ const OperationsSlot = {
 };
 
 const index = () => {
-    
+    /*this.state = {
+        activeTab: "1"
+    };
+    changeTab = activeKey => {
+        console.log(activeKey);
+        this.setState({
+        activeTab: "1"
+        });
+    };
+    const [tab,setTab] = useState("1") */
+
     return (
         <div className="tab-container">
             <Tabs size='large' tabBarExtraContent={OperationsSlot} tabBarStyle={{color: '#379683',fontWeight: '700',}}>
                 <TabPane tab="MY WISHLIST" key="1" style={{marginLeft: '20px'}}>
-                    Content of tab 1
+                    <Wishlist />
                 </TabPane>
                 <TabPane tab="ADD PRODUCT" key="2">
                     <AddProduct />
