@@ -4,6 +4,8 @@ import { Switch, Route } from 'react-router-dom'
 import PrePage from '../PredictionPage/index';
 import AddProduct from '../AddProduct/index';
 import Whislist from '../Whislist/index';
+import Login from "../LogIn/Login";
+import Signup from "../SignUp/SignUp"
 
 const index = () => {
     return (
@@ -12,6 +14,9 @@ const index = () => {
             <Route path="/add-product" component={AddProduct} />
             <Route path="/predict" component={PrePage} />
             <Route path="/whislist" component={Whislist} />
+            <Route path="/Login" component={Login}/>
+            <Route path="/Signup" component={Signup}/>
+
         </Switch>
     );
 }
