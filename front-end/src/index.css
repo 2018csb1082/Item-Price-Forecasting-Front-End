@@ -297,13 +297,6 @@ button + button {
   font-size: 25px;
 }
 
-.chart-box {
-  margin: 1%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
 
 .outer-form-box {
   width: 100%;
@@ -321,6 +314,32 @@ button + button {
   padding: 40px; 
   border-radius: 20px;
   border: 2px solid black;
+}
+
+.predict-base {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-predict {
+  width: 70%;
+  background-color: #EDF5E1 ;
+  border: 0px solid rgba(0, 0, 0, 0.8);
+  border-radius: 4px;
+  font-size: 20px;
+  text-align: center;
+  color: #1f396b;
+  font-style: unset;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.main-predict:hover {
+  box-shadow: 0 12px 20px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 .upper-main-predict{
@@ -341,6 +360,14 @@ button + button {
   line-height: 36px; 
   margin: 24px 0 24px; 
   text-align: center;
+}
+
+.chart-box {
+  margin: 1%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .wishlist-grid-container {
