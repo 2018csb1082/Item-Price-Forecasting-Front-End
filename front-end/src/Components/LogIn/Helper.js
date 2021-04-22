@@ -9,6 +9,7 @@ import Typography from "@material-ui/core/Typography";
 import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
 import { Formik } from "formik";
+import Loader from "../Loader/loader";
 
 const useStyles = makeStyles((theme) => ({
   avatarClass: {
@@ -39,107 +40,124 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Helper() {
   const classes = useStyles();
-  const [jwt, setjwt] = useState("");
+  const [jwt, setjwt] = useState(null);
+  const [load, setload] = useState(true);
   const gettoken = () => {
     let jwt = localStorage.getItem("jwt");
     setjwt(jwt);
   };
   useEffect(() => {
     gettoken();
+    setload(false);
   }, []);
 
-  if (jwt) {
-    return <Redirect to="/" />;
-  } else {
+  if (load === true) {
     return (
-      <Box boxShadow={5} className={classes.maincontainer}>
-        <Avatar className={classes.avatarClass}>
-          <LockOutlinedIcon />
-        </Avatar>
-        <Typography variant="h4" className={classes.signintext}>
-          Sign in
-        </Typography>
-        <Formik
-          initialValues={{ username: "", password: "" }}
-          onSubmit={(values) => {
-            const endpoint =
-              process.env.REACT_APP_BACKEND_URL + "/api/auth/login";
-            axios({
-              method: "post",
-              url: `${endpoint}`,
-              data: {
-                username: values.username,
-                password: values.password,
-              },
-              withCredentials: true,
-            })
-              .then((res) => {
-                localStorage.setItem("jwt", res.data);
-                return (<Redirect to="/"/>)
-              })
-              .catch((e) => {
-                status = e.response.status;
-                if (status == 404) {
-                  alert("user not found, signup first");
-                } else if (status == 403) {
-                  alert("Wrong Password");
-                } else {
-                  alert("something went wrong please try again");
-                }
-              });
-          }}
-        >
-          {(props) => (
-            <form onSubmit={props.handleSubmit}>
-              <TextField
-                variant="outlined"
-                margin="normal"
-                required
-                fullWidth
-                value={props.values.username}
-                onChange={props.handleChange}
-                id="username"
-                label="Email Address"
-                name="username"
-                autoComplete="email"
-                autoFocus
-              />
-              <TextField
-                variant="outlined"
-                margin="normal"
-                required
-                fullWidth
-                value={props.values.password}
-                onChange={props.handleChange}
-                name="password"
-                label="Password"
-                type="password"
-                id="password"
-                autoComplete="current-password"
-              />
-              <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                color="primary"
-              >
-                Sign in
-              </Button>
-              <Typography variant="h4" style={{ fontSize: 15, marginTop: 5 }}>
-                Don't have an account?
-                <Link
-                  to="/signup"
-                  variant="head2"
-                  color="#3f50b5"
-                  className={classes.lastintext}
-                >
-                  Signup
-                </Link>
-              </Typography>
-            </form>
-          )}
-        </Formik>
-      </Box>
+      <div
+        style={{
+          alignItems: "center",
+          justifyContent: "center",
+          display: "flex",
+          height: "100vh",
+        }}
+      >
+        <Loader />
+      </div>
     );
+  } else {
+    if (jwt) {
+      return <Redirect push to="/" />;
+    } else {
+      return (
+        <Box boxShadow={5} className={classes.maincontainer}>
+          <Avatar className={classes.avatarClass}>
+            <LockOutlinedIcon />
+          </Avatar>
+          <Typography variant="h4" className={classes.signintext}>
+            Sign in
+          </Typography>
+          <Formik
+            initialValues={{ username: "", password: "" }}
+            onSubmit={(values) => {
+              const endpoint =
+                process.env.REACT_APP_BACKEND_URL + "/api/auth/login";
+              axios({
+                method: "post",
+                url: `${endpoint}`,
+                data: {
+                  username: values.username,
+                  password: values.password,
+                },
+                withCredentials: true,
+              })
+                .then((res) => {
+                  localStorage.setItem("jwt", res.data);
+                  setjwt(res.data);
+                })
+                .catch((e) => {
+                  status = e.response.status;
+                  if (status == 404) {
+                    alert("user not found, signup first");
+                  } else if (status == 403) {
+                    alert("Wrong Password");
+                  } else {
+                    alert("something went wrong please try again");
+                  }
+                });
+            }}
+          >
+            {(props) => (
+              <form onSubmit={props.handleSubmit}>
+                <TextField
+                  variant="outlined"
+                  margin="normal"
+                  required
+                  fullWidth
+                  value={props.values.username}
+                  onChange={props.handleChange}
+                  id="username"
+                  label="Email Address"
+                  name="username"
+                  autoComplete="email"
+                  autoFocus
+                />
+                <TextField
+                  variant="outlined"
+                  margin="normal"
+                  required
+                  fullWidth
+                  value={props.values.password}
+                  onChange={props.handleChange}
+                  name="password"
+                  label="Password"
+                  type="password"
+                  id="password"
+                  autoComplete="current-password"
+                />
+                <Button
+                  type="submit"
+                  fullWidth
+                  variant="contained"
+                  color="primary"
+                >
+                  Sign in
+                </Button>
+                <Typography variant="h4" style={{ fontSize: 15, marginTop: 5 }}>
+                  Don't have an account?
+                  <Link
+                    to="/signup"
+                    variant="head2"
+                    color="#3f50b5"
+                    className={classes.lastintext}
+                  >
+                    Signup
+                  </Link>
+                </Typography>
+              </form>
+            )}
+          </Formik>
+        </Box>
+      );
+    }
   }
 }
