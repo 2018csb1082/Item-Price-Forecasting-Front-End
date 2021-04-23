@@ -57,7 +57,7 @@ export default function Helper() {
   const [jwt, setjwt] = useState(false);
   const [load, setload] = useState(true);
   const classes = useStyles();
-  const gettoken=()=>{
+  const gettoken = () => {
     let jwt = localStorage.getItem("jwt");
     setjwt(jwt);
   }
@@ -91,11 +91,11 @@ export default function Helper() {
             initialValues={{ username: "", password: "", password2: "" }}
             onSubmit={(values) => {
               const endpoint =
-                process.env.REACT_APP_BACKEND_URL + "/api/auth/register";
+                "http://127.0.0.1:8000" + "/api/auth/register";
               console.log(endpoint);
               axios({
                 method: "post",
-                url: `${endpoint}`,
+                url: endpoint,
                 data: {
                   username: values.username,
                   password: values.password,
@@ -174,7 +174,7 @@ export default function Helper() {
                   variant="contained"
                   color="primary"
                 >
-                  Sign in
+                  Sign Up
                 </Button>
                 <Typography variant="h4" style={{ fontSize: 15, marginTop: 5 }}>
                   Already have an account?

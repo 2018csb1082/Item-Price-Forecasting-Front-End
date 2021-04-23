@@ -80,10 +80,10 @@ export default function Helper() {
             initialValues={{ username: "", password: "" }}
             onSubmit={(values) => {
               const endpoint =
-                process.env.REACT_APP_BACKEND_URL + "/api/auth/login";
+                "http://127.0.0.1:8000" + "/api/auth/login";
               axios({
                 method: "post",
-                url: `${endpoint}`,
+                url: endpoint,
                 data: {
                   username: values.username,
                   password: values.password,
@@ -96,6 +96,7 @@ export default function Helper() {
                 })
                 .catch((e) => {
                   status = e.response.status;
+                  console.log(e.response);
                   if (status == 404) {
                     alert("user not found, signup first");
                   } else if (status == 403) {

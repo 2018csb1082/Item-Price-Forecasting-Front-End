@@ -10,27 +10,6 @@ import { Redirect } from "react-router";
 
 const { TabPane } = Tabs;
 
-// const OperationsSlot = {
-//   left: (
-//     <div>
-//       <img src={logo} />
-//     </div>
-//   ),
-//   right: (
-//     <div>
-//       <Button
-//         icon={<LogoutOutlined />}
-//         size="medium"
-//         type="primary"
-//         shape="round"
-//         className="button-LOGOUT"
-//       >
-//         LOGOUT
-//       </Button>
-//     </div>
-//   ),
-// };
-
 const index = () => {
   const OperationsSlot = {
     left: (
