@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 const { Meta } = Card;
 
 export default function Item(props) {
+  console.log('lolwat', props.pid);
   return (
     <Card
       hoverable
@@ -37,7 +38,7 @@ export default function Item(props) {
         <Button type="primary">
           <Link to={{
             pathname: '/predict',
-            state: {
+            customProps: {
               pid: props.pid,
             }
           }}>

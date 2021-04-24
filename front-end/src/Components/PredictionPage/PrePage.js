@@ -17,10 +17,11 @@ const min = 0;
 const PrePage = (props) => {
 
     const [loading, setLoading] = useState(true);
-    const { pid } = useLocation();
+    const stateObject = useLocation();
     useEffect(() => {
-        axios.get(`http://127.0.0.1:8000/api/trackedprices?pid=${pid}`)
+        axios.get(`http://127.0.0.1:8000/api/predprices?pid=${stateObject.customProps.pid}`)
             .then((response) => {
+                console.log(response);
                 timeLine = response.data.map((datapoint) => {
                     return datapoint.date;
                 });
