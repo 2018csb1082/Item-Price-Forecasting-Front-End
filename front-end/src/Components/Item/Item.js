@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 const { Meta } = Card;
 
 export default function Item(props) {
+  console.log('lolwat', props.pid);
   return (
     <Card
       hoverable
@@ -18,7 +19,7 @@ export default function Item(props) {
       cover={
         <img
           alt="example"
-          src={props.image}
+          src="#"
           style={{
             borderTopLeftRadius: 10,
             borderTopRightRadius: 10,
@@ -28,13 +29,19 @@ export default function Item(props) {
       }
     >
       <div style={{ flex: 1, flexDirection: "column", alignItems: "center" }}>
+        <h3>{props.productName}</h3>
         <Button type="primary">
-          <a href={props.link} target="_blank">
+          <a href={props.url} target="_blank">
             Product Website
           </a>
         </Button>
         <Button type="primary">
-          <Link to="/predict">
+          <Link to={{
+            pathname: '/predict',
+            customProps: {
+              pid: props.pid,
+            }
+          }}>
             Predict Price
           </Link>
         </Button>

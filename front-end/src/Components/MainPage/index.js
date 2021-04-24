@@ -45,8 +45,8 @@ const index = () => {
   //       activeTab: "1"
   //       });
   //   };
-  const [tab,setTab] = useState("1") 
-  const goToWishlist = () =>{
+  const [tab, setTab] = useState("1")
+  const goToWishlist = () => {
 
   }
   const OperationsSlot = {
@@ -88,9 +88,9 @@ const index = () => {
 
   if (load) {
     return (
-    <div style={{alignItems: 'center', justifyContent: 'center', display: 'flex', height:'100vh'}}>
-        <Loader/>
-    </div>
+      <div style={{ alignItems: 'center', justifyContent: 'center', display: 'flex', height: '100vh' }}>
+        <Loader />
+      </div>
     );
   } else {
     if (!jwt) {
