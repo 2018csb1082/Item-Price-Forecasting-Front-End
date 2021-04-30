@@ -374,9 +374,10 @@ button + button {
   width: 100%;
   display: grid;
   grid-template-columns: 2fr 2fr 2fr;
-  padding: 40px 80px 40px 80px;
-  grid-column-gap: 80px;
-  grid-row-gap: 80px;
+  padding: 20px 40px 20px 40px;
+  grid-column-gap: 40px;
+  grid-row-gap: 40px;
+  background-color: #8EE4AF;
 }
 
 .wishlist-grid-item {
@@ -387,6 +388,29 @@ button + button {
   font-size: 20px;
   text-align: center;
 } 
+
+.productname {
+  padding: 5px;
+  overflow: hidden;
+  font-family: 'Raleway',sans-serif; 
+  color: #05386B;
+  font-size: 18px; 
+  text-align: center;
+}
+
+.wishlist-button {
+  width: 50%;
+  margin: 0px;
+  border-radius:0px;
+  background-color: #05386B;
+  border-color: #05386B;
+}
+
+.wishlist-button:hover {
+  background-color: #EDF5E1;
+  border-color: #EDF5E1;
+  color: #05386B;
+}
 
 .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
   color: #05386B !important; 

@@ -7,35 +7,25 @@ const { Meta } = Card;
 export default function Item(props) {
   console.log('lolwat', props.pid);
   return (
-    <Card
+    <div
       hoverable
       style={{
         width: "100%",
-        margin: "auto",
-        marginTop: 20,
-        borderRadius: 10,
+        borderRadius: "10px",
+        padding: "0px",
+        backgroundColor: "white",
+        borderRadius: "0px",
       }}
       size="small"
-      cover={
-        <img
-          alt="example"
-          src="#"
-          style={{
-            borderTopLeftRadius: 10,
-            borderTopRightRadius: 10,
-            maxHeight: 180,
-          }}
-        />
-      }
     >
       <div style={{ flex: 1, flexDirection: "column", alignItems: "center" }}>
-        <h3>{props.productName}</h3>
-        <Button type="primary">
+        <h3 className="productname">{props.productName.substring(0, 60)}...</h3>
+        <Button type="primary" className="wishlist-button">
           <a href={props.url} target="_blank">
             Product Website
           </a>
         </Button>
-        <Button type="primary">
+        <Button type="primary" className="wishlist-button">
           <Link to={{
             pathname: '/predict',
             customProps: {
@@ -46,6 +36,6 @@ export default function Item(props) {
           </Link>
         </Button>
       </div>
-    </Card>
+    </div>
   );
 }
